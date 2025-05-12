@@ -1,0 +1,40 @@
+.card {
+    margin-top: 80px;
+    padding: 0;
+    /* height: 600px; */
+}
+form .form-control {
+    max-width: 100%;
+}
+
+form .row {
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    margin-bottom: 5px;
+    background-color: white;
+}
+
+.card-header {
+    padding: 0;
+    background-color: white;
+}
+
+.card-body {
+    padding: 0;
+    margin: 0;
+}
+
+.card-footer {
+    text-align: center;
+}
+
+.mb-4, .my-4 {
+    margin-bottom: 0.5rem !important;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0;
+}

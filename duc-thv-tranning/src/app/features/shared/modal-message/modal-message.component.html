@@ -1,0 +1,26 @@
+<div class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5);">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" [ngClass]="{
+          'modal-header-error': type === 'error',
+          'modal-header-success': type === 'success',
+          'modal-header-info': type === 'info',
+          'modal-header-warning': type === 'warning'
+          }">
+        <h5 class="modal-title">{{ title }}</h5>
+      </div>
+      <div class="modal-body">
+        <p>{{ message }}</p>
+        <ul *ngIf="errors.length > 0" class="text-danger">
+          <li *ngFor="let err of errors">{{ err }}</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button *ngFor="let btn of buttons" type="button" class="btn" [ngClass]="btn.class || 'btn-secondary'"
+          (click)="onClick(btn.action)">
+          {{ btn.label }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

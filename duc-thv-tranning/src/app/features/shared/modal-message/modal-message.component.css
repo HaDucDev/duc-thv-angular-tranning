@@ -1,0 +1,23 @@
+.modal {
+    display: block;
+}
+
+.modal-header-error {
+    background-color: red;
+    color: white;
+}
+
+.modal-header-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.modal-header-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+.modal-header-warning {
+    background-color: rgba(255, 166, 0, 0.411);
+    color: red;
+}

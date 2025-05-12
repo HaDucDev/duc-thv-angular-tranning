@@ -1,0 +1,90 @@
+<div class="card p-4 shadow-sm">
+  <div class="card-header">
+    <h5 class="card-title">
+      {{ isDetailMode ? (isEditMode ? 'Edit Product' : 'Product Details') : 'Add Product' }}
+    </h5>
+  </div>
+
+  <div class="card-body">
+    <form [formGroup]="productForm">
+      <div class="mb-4">
+        <label for="code">Code <span class="text-danger">*</span></label>
+        <input id="code" class="form-control" formControlName="code" name="code" [(ngModel)]="productData.code"
+          ngModelOptions="{standalone: true}" [readonly]="isDetailMode || isEditMode">
+      </div>
+
+      <div class="mb-4">
+        <label for="name">Name <span class="text-danger">*</span></label>
+        <input id="name" class="form-control" formControlName="name" name="name" [(ngModel)]="productData.name"
+          ngModelOptions="{standalone: true}">
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <label for="price">Price <span class="text-danger">*</span></label>
+          <input id="price" type="text" class="form-control" formControlName="price" name="price"
+            [(ngModel)]="productData.price" (change)="onPriceChange($event.target.value)"
+            ngModelOptions="{standalone: true}" (keydown)="blockNonDigitsPrice($event)" appCurrencyFormatMoney>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <label for="quantity">Quantity <span class="text-danger">*</span></label>
+          <input id="quantity" class="form-control" formControlName="quantity" name="quantity"
+            [(ngModel)]="productData.quantity" ngModelOptions="{standalone: true}" (keydown)="blockNonDigits($event)">
+        </div>
+      </div>
+
+      <div class="mb-4 d-flex align-items-center">
+        <label class="form-label me-3" style="width: 100px;">Type</label>
+        <div class="form-check form-check-inline">
+          <input id="typeSingle" class="form-check-input" type="radio" formControlName="type" [value]="'Single Product'"
+            [(ngModel)]="productData.type" ngModelOptions="{standalone: true}">
+          <label class="form-check-label" for="typeSingle">Single Product</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input id="typePackage" class="form-check-input" type="radio" formControlName="type" [value]="'Package'"
+            [(ngModel)]="productData.type" ngModelOptions="{standalone: true}">
+          <label class="form-check-label" for="typePackage">Package</label>
+        </div>
+      </div>
+
+      <div class="mb-4 d-flex align-items-center">
+        <label class="form-label mb-0 me-3" style="width: 100px;">Discount</label>
+        <div class="form-check">
+          <input id="discountCheck" class="form-check-input" type="checkbox" formControlName="discount" name="discount"
+            [(ngModel)]="productData.discount" ngModelOptions="{standalone: true}">
+          <label class="form-check-label ms-2" for="discountCheck">Apply Discount</label>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label for="image">Image URL <span class="text-danger">*</span></label>
+        <input id="image" class="form-control" formControlName="image" name="image" [(ngModel)]="productData.image"
+          ngModelOptions="{standalone: true}">
+      </div>
+
+      <div class="mb-4 text-center">
+        <label>Preview</label>
+        <div>
+          <img [src]="productForm.get('image')?.value" class="img-fluid rounded" style="max-height: 200px"
+            *ngIf="productForm.get('image')?.value">
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="card-footer text-end">
+    <ng-container *ngIf="isDetailMode">
+      <button *ngIf="!isEditMode && isControlBtnShow" class="btn btn-primary" (click)="onEdit()">Edit</button>
+      <button *ngIf="isEditMode" class="btn btn-success" (click)="onSave()">Save</button>
+      <button class="btn btn-secondary" (click)="isEditMode ? onCancelEdit() : onClose()">
+        {{ isEditMode ? 'Cancel' : 'Close' }}
+      </button>
+    </ng-container>
+
+    <ng-container *ngIf="!isDetailMode">
+      <button class="btn btn-primary" (click)="onSave()">Add</button>
+      <button class="btn btn-secondary" (click)="onAddClose()">Cancel</button>
+    </ng-container>
+  </div>
+</div>

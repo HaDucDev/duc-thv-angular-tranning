@@ -1,0 +1,28 @@
+<div class="card shadow-sm p-3 mb-4 bg-white rounded">
+  <div class="image-wrapper">
+    <img [src]="productDto?.image" alt="Product Image" *ngIf="productDto?.image">
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ productDto?.name }}</h5>
+    <p class="card-text text-muted">Code: {{ productDto?.code }}</p>
+    <p class="card-text">
+      <strong>Price:</strong> ${{ productDto?.price | number:'1.2-2' }}<br>
+      <strong>Quantity:</strong> {{ productDto?.quantity }}
+    </p>
+    <button type="button" class="btn btn-primary" (click)="openDetailProduct()" *ngIf="!isControlBtnShow">
+      Detail Product
+    </button>
+    <div class="btn-group" dropdown *ngIf="isControlBtnShow">
+      <button id="dropdown-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+        Manage Product
+      </button>
+      <ul *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="dropdown-basic">
+        <li role="menuitem"><a class="dropdown-item" [routerLink]="['/product-management/product-detail/view']">Detail
+            Product</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#" (click)="onDeleteProduct(productDto,$event)">Delete
+            Product</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>

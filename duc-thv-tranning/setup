@@ -1,0 +1,25 @@
+npm install json-server@0.16.3 --save-dev
+npm install bootstrap@4.6.2 ngx-bootstrap@3.3.0
+ng g c features/auth/login
+ng g c features/auth/register
+npm install ngx-toastr@9.2.0
+ng generate component features/management
+ng generate component features/management/users
+ng generate component features/management/settings
+ng generate component features/management/users/user-detail-modal
+
+ng generate component features/management/product-management/product-detail-modal
+ng generate component features/management/product-management/product-detail
+ng generate component features/management/product-management/product-list
+ng generate component features/management/product-management/empty-product-detail
+ng generate component features/management/product-management/card-product-item
+
+
+ng generate component features/management/user-management/card-user-item
+ng generate component features/management/user-management/empty-user-detail
+ng generate component features/management/user-management/user-detail
+ng generate component features/management/user-management/user-list
+
+ng generate component features/shared/modal-message
+
+npm uninstall ngx-toastr

@@ -1,0 +1,22 @@
+<div class="card shadow-sm p-3 mb-4 bg-white rounded">
+  <div class="card-body">
+    <h5 class="card-title">{{ userDto?.firstname }} {{ userDto?.lastname }}</h5>
+    <p class="card-text text-muted">Id: {{ userDto?.id }}</p>
+    <p class="card-text">
+      <strong>Username:</strong> ${{ userDto?.username }}<br>
+      <strong>Created:</strong> {{ userDto?.created }}
+    </p>
+    <button type="button" class="btn btn-primary" (click)="openDetailUser(userDto?.code)" *ngIf="!isControlBtnShow">
+      Deatail User
+    </button>
+    <div class="btn-group" dropdown *ngIf="isControlBtnShow">
+      <button id="dropdown-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+        Manage User
+      </button>
+      <ul *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="dropdown-basic">
+        <li role="menuitem"><a class="dropdown-item" [routerLink]="['/user-management/user-detail']" >Detail User</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#" (click)="onDeleteUser(userDto,$event)" *ngIf="isNotRoleUsetBtnShow">Delete User</a></li>
+      </ul>
+    </div>    
+    
+</div>

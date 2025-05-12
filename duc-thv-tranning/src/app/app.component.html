@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+<app-modal-message *ngIf="modalVisible"
+    [title]="modalData?.title"
+    [message]="modalData?.message"
+    [errors]="modalData?.errors" 
+    [buttons]="modalData?.buttons" 
+    [type]="modalData?.type"
+    (buttonClick)="handleModalClick($event)">
+</app-modal-message>

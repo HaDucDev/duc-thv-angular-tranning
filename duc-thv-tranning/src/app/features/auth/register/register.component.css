@@ -1,0 +1,28 @@
+/* styles.css hoặc component-specific style */
+.register-form {
+    max-width: 500px;
+    margin: 10px auto;
+    padding: 25px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .register-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  .register-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .register-form .btn {
+    width: 100%;
+  }
+  
+  .register-form .form-text {
+    color: #6c757d;
+  }
+  

@@ -1,0 +1,46 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h5 class="mb-0">List of Users</h5>
+  </div>
+
+  <div class="table-responsive shadow-sm rounded">
+    <table class="table table-bordered align-middle">
+      <thead class="thead-dark">
+        <tr class="table-primary text-center">
+          <th>ID</th>
+          <th>Username</th>
+          <th>Fullname</th>
+          <th>Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users" class="text-center" (click)="viewCardUser(user)" [class.selected]="isUserSelected(user)">
+          <td>{{ user.id }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.firstname }} {{ user.lastname }}</td>
+          <td>{{ user.created | date: 'dd/MM/yyyy HH:mm' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <nav *ngIf="totalUsers > pageSize" class="mt-3">
+    <ul class="pagination justify-content-center">
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <button class="page-link" (click)="goToPage(currentPage - 1)">Previous</button>
+      </li>
+
+      <li class="page-item" 
+          *ngFor="let page of getTotalPages()" 
+          [class.active]="currentPage === page">
+        <button class="page-link" (click)="goToPage(page)">
+          {{ page }}
+        </button>
+      </li>
+
+      <li class="page-item" [class.disabled]="currentPage === getTotalPages().length">
+        <button class="page-link" (click)="goToPage(currentPage + 1)">Next</button>
+      </li>
+    </ul>
+  </nav>
+</div>
