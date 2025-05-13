@@ -45,8 +45,7 @@ export class CardProductItemComponent implements OnInit {
     event.preventDefault();
     this.modalService.confirmDelete(`Are you sure you want to delete the product "${productDto.name}"?`, 'Confirmation')
       .subscribe((confirmed) => {
-        if (confirmed) {
-          if (productDto.code) {
+        if (confirmed && productDto.code) {
             this.productService.deleteProduct(productDto.code).subscribe(() => {
               this.productRefreshService.triggerRefresh();
               this.router.navigate(['/product-management']);
@@ -59,7 +58,6 @@ export class CardProductItemComponent implements OnInit {
                 'error'
               );
             });
-          }
         }
       });
 

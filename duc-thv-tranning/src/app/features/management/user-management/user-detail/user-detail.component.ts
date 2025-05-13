@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserDto, UserService } from '../user-management.service';
 import { Router } from '@angular/router';
 import { SelectedUserService, UserRefreshService } from '../user-list/user-list.service';
-import { FIELD_LABELS_USER, USER_VALIDATION_MESSAGES } from './user-detail.constants-messages';
 import { ErrorHelperService } from 'src/app/features/shared/modal-message/error-helper.service';
 import { ModalService } from 'src/app/features/shared/modal-message/modal.service';
+import { FIELD_LABELS_USER, USER_VALIDATION_MESSAGES } from 'src/app/common/const-message/constants-messages';
 
 @Component({
   selector: 'app-user-detail',

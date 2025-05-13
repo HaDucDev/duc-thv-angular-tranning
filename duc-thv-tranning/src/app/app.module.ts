@@ -20,7 +20,7 @@ import { ProductListComponent } from './features/management/product-management/p
 import { EmptyProductDetailComponent } from './features/management/product-management/empty-product-detail/empty-product-detail.component';
 import { CardProductItemComponent } from './features/management/product-management/card-product-item/card-product-item.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { CurrencyFormatMoneyDirective } from './features/management/product-management/product-detail/directives/currency-format-money.directive';
+import { CurrencyFormatMoneyDirective } from './common/directives/currency-format-money.directive';
 import { CardUserItemComponent } from './features/management/user-management/card-user-item/card-user-item.component';
 import { EmptyUserDetailComponent } from './features/management/user-management/empty-user-detail/empty-user-detail.component';
 import { UserDetailComponent } from './features/management/user-management/user-detail/user-detail.component';

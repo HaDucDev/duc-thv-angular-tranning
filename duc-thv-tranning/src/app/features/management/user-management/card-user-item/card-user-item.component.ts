@@ -49,8 +49,7 @@ export class CardUserItemComponent implements OnInit {
 
     this.modalService.confirmDelete(`Are you sure you want to delete the user "${userDto.firstname} ${userDto.lastname}"?`, 'Confirmation')
       .subscribe((confirmed) => {
-        if (confirmed) {
-          if (userDto.id) {
+        if (confirmed && userDto.id) {
             this.userService.deleteUser(userDto.id).subscribe(() => {
               this.userRefreshService.triggerRefresh();
               this.router.navigate(['/user-management']);
@@ -64,7 +63,6 @@ export class CardUserItemComponent implements OnInit {
               );
             });
           }
-        }
       });
 
   }

@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 import { AuthService, RegisterRequestDto } from 'src/app/features/auth/auth.service';
 import { passwordMatchValidator } from 'src/app/features/auth/register/password-match.validator';
 import { ModalService } from '../../shared/modal-message/modal.service';
-import { FIELD_LABELS_USER_REGISTER, REGISTER_VALIDATION_MESSAGES } from 'src/app/features/auth/register/register.constants-messages';
 import { ErrorHelperService } from '../../shared/modal-message/error-helper.service';
+import { FIELD_LABELS_USER_REGISTER, REGISTER_VALIDATION_MESSAGES } from 'src/app/common/const-message/constants-messages';
 
 @Component({
   selector: 'app-register',

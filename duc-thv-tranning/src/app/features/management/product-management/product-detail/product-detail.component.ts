@@ -5,9 +5,9 @@ import { priceValidator } from './product-price.validator';
 import { ProductRefreshService, SelectedProductService } from '../product-list/product-list.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/features/auth/auth.service';
-import { FIELD_LABELS_PRODUCT, PRODUCT_VALIDATION_MESSAGES } from './product-detail.constants-messages';
 import { ModalService } from 'src/app/features/shared/modal-message/modal.service';
 import { ErrorHelperService } from 'src/app/features/shared/modal-message/error-helper.service';
+import { FIELD_LABELS_PRODUCT, PRODUCT_VALIDATION_MESSAGES } from 'src/app/common/const-message/constants-messages';
 
 @Component({
   selector: 'app-product-detail',
