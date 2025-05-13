@@ -10,7 +10,6 @@ import { FIELD_LABELS_USER, USER_VALIDATION_MESSAGES } from 'src/app/common/cons
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.css']
 })
 export class UserDetailComponent implements OnInit {
 

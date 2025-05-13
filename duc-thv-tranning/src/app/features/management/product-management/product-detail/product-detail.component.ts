@@ -146,7 +146,7 @@ export class ProductDetailComponent implements OnInit {
           return;
         }
       });
-      /////
+
       // create product
       this.productService.addProduct(this.productData).subscribe(() => {
         this.productRefreshService.triggerRefresh();
